@@ -4,6 +4,8 @@ vim.opt.fillchars = { eob = " " }
 vim.opt.cursorline = true
 
 vim.opt.fileencoding = "utf-8"
+vim.opt.clipboard = "unnamedplus"
+
 
 vim.opt.confirm = true
 vim.opt.swapfile = false
@@ -87,7 +89,7 @@ require("bufferline").setup()
 require("gitsigns").setup()
 require("ipynb").setup()
 
-vim.lsp.enable({ "lua_ls", "pyright", "clangd"})
+vim.lsp.enable({ "lua_ls", "ty"})
 require("nvim-treesitter").setup({
     ensure_installed = {
         "lua",
