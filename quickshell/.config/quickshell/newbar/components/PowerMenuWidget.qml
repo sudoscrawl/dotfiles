@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
+import Quickshell.Io
 import "../theme"
 
 Item {
@@ -57,7 +58,7 @@ Item {
         id: powerPopup
 
         anchor.window: root.barWindow
-        anchor.rect.x: Math.round(root.mapToItem(root.barWindow, 0, 0).x + root.width - width)
+        anchor.rect.x: Math.round(root.mapToItem(null, 0, 0).x + root.width - width)
         anchor.rect.y: root.barWindow.height + 2
 
         implicitWidth: 240
@@ -184,7 +185,12 @@ Item {
                             cursorShape: Qt.PointingHandCursor
                             onClicked: {
                                 powerPopup.visible = false;
-                                Quickshell.execDetached(["hyprctl", "dispatch", "exit"]);
+                                const sessionId = Quickshell.env("XDG_SESSION_ID");
+                                if (sessionId) {
+                                    Quickshell.execDetached(["loginctl", "kill-session", sessionId]);
+                                } else {
+                                    Quickshell.execDetached(["loginctl", "terminate-user", Quickshell.env("USER") || ""]);
+                                }
                             }
                         }
                     }
