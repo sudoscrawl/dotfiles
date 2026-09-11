@@ -49,3 +49,31 @@ hl.bind(config.modifier .. " + F8",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%
 hl.bind(config.modifier .. " + PRINT", hl.dsp.exec_cmd("hyprshot -m region -o ~/Pictures/Screenshots"))
 hl.bind(config.modifier .. " + SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot -m window -o ~/Pictures/Screenshots"))
 hl.bind(config.modifier .. " + CTRL + PRINT", hl.dsp.exec_cmd("hyprshot -m output -o ~/Pictures/Screenshots")) 
+
+
+
+-- RESIZE
+
+local function resize_window(dw, dh)
+    hl.dispatch(hl.dsp.window.resize({
+        x = dw,
+        y = dh,
+        relative = true,
+    }))
+end
+
+hl.bind(config.modifier .. " + CTRL + h", function ()
+    resize_window(-20, 0)
+end)
+
+hl.bind(config.modifier .. " + CTRL + j", function ()
+    resize_window(0, 20)
+end)
+
+hl.bind(config.modifier .. " + CTRL + k", function ()
+    resize_window(0, -20)
+end)
+
+hl.bind(config.modifier .. " + CTRL + l", function ()
+    resize_window(20, 0)
+end)

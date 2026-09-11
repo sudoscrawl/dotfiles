@@ -1,6 +1,6 @@
 alias vim='nvim'
 alias venv='source .venv/bin/activate'
-
+alias loc='git ls-files | xargs wc -l'
 
 
 fastfetch
