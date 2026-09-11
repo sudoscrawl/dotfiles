@@ -62,18 +62,23 @@ local function resize_window(dw, dh)
     }))
 end
 
-hl.bind(config.modifier .. " + CTRL + h", function ()
+hl.bind(config.modifier .. " + CTRL + left", function ()
     resize_window(-20, 0)
 end)
 
-hl.bind(config.modifier .. " + CTRL + j", function ()
+hl.bind(config.modifier .. " + CTRL + down", function ()
     resize_window(0, 20)
 end)
 
-hl.bind(config.modifier .. " + CTRL + k", function ()
+hl.bind(config.modifier .. " + CTRL + up", function ()
     resize_window(0, -20)
 end)
 
-hl.bind(config.modifier .. " + CTRL + l", function ()
+hl.bind(config.modifier .. " + CTRL + right", function ()
     resize_window(20, 0)
 end)
+
+
+-- LOCK
+hl.bind(config.modifier .. " + l", hl.dsp.exec_cmd(config.apps.lock_screen))
+
