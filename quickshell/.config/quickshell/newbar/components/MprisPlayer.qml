@@ -27,13 +27,9 @@ Rectangle {
 
     visible: hasMedia
     implicitHeight: Theme.capsuleHeight
-    implicitWidth: hasMedia ? Math.min(280, mprisRow.implicitWidth + 16) : 0
+    implicitWidth: hasMedia ? Math.min(220, mprisRow.implicitWidth + 12) : 0
     radius: Theme.radiusPill
-    color: Theme.bgAlt
-    border {
-        width: 1
-        color: Theme.border
-    }
+    color: "transparent"
 
     Behavior on implicitWidth {
         NumberAnimation { duration: 150; easing.type: Easing.OutCubic }
@@ -45,10 +41,10 @@ Rectangle {
             left: parent.left
             right: parent.right
             verticalCenter: parent.verticalCenter
-            leftMargin: 8
-            rightMargin: 8
+            leftMargin: 6
+            rightMargin: 6
         }
-        spacing: 6
+        spacing: 4
 
         // Media Icon
         Text {

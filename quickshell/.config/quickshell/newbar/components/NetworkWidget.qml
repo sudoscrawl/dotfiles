@@ -364,33 +364,20 @@ Item {
         id: netCapsule
         anchors.fill: parent
         radius: Theme.radiusPill
-        color: netMouse.containsMouse ? Theme.bgLight : Theme.bgAlt
-        border {
-            width: 1
-            color: netPopup.visible ? Theme.borderFocus : (netMouse.containsMouse ? Theme.borderHover : Theme.border)
-        }
-        implicitWidth: netRow.implicitWidth + 16
+        color: netMouse.containsMouse ? Theme.bgLight : "transparent"
+        
+        implicitWidth: 28
         implicitHeight: Theme.capsuleHeight
-
-        Behavior on color { ColorAnimation { duration: 120 } }
-        Behavior on border.color { ColorAnimation { duration: 120 } }
 
         RowLayout {
             id: netRow
             anchors.centerIn: parent
-            spacing: 6
+            spacing: 0
 
             Text {
                 text: root.netIcon
                 color: root.isConnected ? Theme.fgBright : Theme.fgMuted
                 font { family: Theme.fontMono; pixelSize: Theme.iconSizeSm }
-            }
-            Text {
-                text: root.isConnected ? (root.isWifi ? root.ssid : "Ethernet") : "Offline"
-                color: root.isConnected ? Theme.fg : Theme.fgMuted
-                font { family: Theme.fontMono; pixelSize: Theme.fontSizeSm; weight: Font.Medium }
-                elide: Text.ElideRight
-                maximumLineCount: 1
             }
         }
 

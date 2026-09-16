@@ -46,13 +46,13 @@ QtObject {
     // ─────────────────────────────────────────────────────────────
     // GEOMETRY & RADII
     // ─────────────────────────────────────────────────────────────
-    readonly property int radiusBar: 14                 // Main bar radius
-    readonly property int radiusPill: 9                 // Capsule / pill radius
+    readonly property int radiusBar: 12                 // Main bar radius
+    readonly property int radiusPill: 7                 // Capsule / pill radius
     readonly property int radiusPopup: 16               // Popup window radius
     readonly property int radiusInner: 10               // Inner card elements
 
-    readonly property int barHeight: 44                 // Bar height
-    readonly property int capsuleHeight: 30             // Standard capsule height
+    readonly property int barHeight: 36                 // Bar height
+    readonly property int capsuleHeight: 26             // Standard capsule height
 
     // ─────────────────────────────────────────────────────────────
     // TYPOGRAPHY
@@ -61,15 +61,15 @@ QtObject {
     readonly property string fontSans: "JetBrainsMono Nerd Font"
 
     readonly property int fontSizeXs: 10
-    readonly property int fontSizeSm: 11
-    readonly property int fontSizeRegular: 12
+    readonly property int fontSizeSm: 10
+    readonly property int fontSizeRegular: 11
     readonly property int fontSizeMd: 13
     readonly property int fontSizeLg: 15
     readonly property int fontSizeXl: 22
     readonly property int fontSizeTitle: 30
 
-    readonly property int iconSizeSm: 13
-    readonly property int iconSizeRegular: 15
-    readonly property int iconSizeMd: 17
+    readonly property int iconSizeSm: 12
+    readonly property int iconSizeRegular: 14
+    readonly property int iconSizeMd: 15
     readonly property int iconSizeLg: 20
 }

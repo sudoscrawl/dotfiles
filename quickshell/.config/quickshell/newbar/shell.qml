@@ -24,8 +24,8 @@ Scope {
                     right: true
                 }
 
-                implicitHeight: Theme.barHeight + 8
-                exclusiveZone: Theme.barHeight + 8
+                implicitHeight: Theme.barHeight + 6
+                exclusiveZone: Theme.barHeight + 6
                 color: "transparent"
 
                 WlrLayershell.layer: WlrLayer.Top
@@ -38,7 +38,7 @@ Scope {
                         fill: parent
                         leftMargin: 12
                         rightMargin: 12
-                        topMargin: 6
+                        topMargin: 4
                         bottomMargin: 2
                     }
 
@@ -50,21 +50,7 @@ Scope {
                         color: Theme.border
                     }
 
-                    // Inner delicate border for refined depth
-                    Rectangle {
-                        anchors.fill: parent
-                        anchors.margins: 1
-                        radius: Theme.radiusBar - 1
-                        color: "transparent"
-                        border {
-                            width: 1
-                            color: "#12d5c6a5"
-                        }
-                    }
-
-                    // ─────────────────────────────────────────────────────
-                    // LEFT REGION: Launcher, Workspaces, Window Title
-                    // ─────────────────────────────────────────────────────
+                    // LEFT REGION: Workspaces
                     RowLayout {
                         id: leftRegion
                         anchors {
@@ -74,60 +60,16 @@ Scope {
                         }
                         spacing: 8
 
-                        // Application Launcher Button
-                        Rectangle {
-                            implicitWidth: 32
-                            implicitHeight: Theme.capsuleHeight
-                            radius: Theme.radiusPill
-                            color: launcherMouse.containsMouse ? Theme.bgLight : Theme.bgAlt
-                            border {
-                                width: 1
-                                color: launcherMouse.containsMouse ? Theme.yellow : Theme.border
-                            }
-
-                            Behavior on color {
-                                ColorAnimation { duration: 120 }
-                            }
-
-                            Text {
-                                anchors.centerIn: parent
-                                text: "󰣇"
-                                color: launcherMouse.containsMouse ? Theme.yellow : Theme.fgBright
-                                font {
-                                    family: Theme.fontMono
-                                    pixelSize: Theme.iconSizeMd
-                                }
-                            }
-
-                            MouseArea {
-                                id: launcherMouse
-                                anchors.fill: parent
-                                hoverEnabled: true
-                                cursorShape: Qt.PointingHandCursor
-                                onClicked: {
-                                    Quickshell.execDetached(["wofi", "--show", "drun"]);
-                                }
-                            }
-                        }
-
-                        // Hyprland Workspaces
                         Workspaces {}
-
-                        // Active Window Title
-                        WindowTitle {}
                     }
 
-                    // ─────────────────────────────────────────────────────
-                    // CENTER REGION: Clock & Interactive Calendar
-                    // ─────────────────────────────────────────────────────
+                    // CENTER REGION: Clock
                     ClockWidget {
                         anchors.centerIn: parent
                         barWindow: bar
                     }
 
-                    // ─────────────────────────────────────────────────────
-                    // RIGHT REGION: Media, Stats, Controls, Tray, Power
-                    // ─────────────────────────────────────────────────────
+                    // RIGHT REGION
                     RowLayout {
                         id: rightRegion
                         anchors {
@@ -135,48 +77,36 @@ Scope {
                             rightMargin: 8
                             verticalCenter: parent.verticalCenter
                         }
-                        spacing: 6
+                        spacing: 4
 
-                        // MPRIS Media Player
                         MprisPlayer {}
 
-                        // System Stats (CPU & RAM)
                         SystemStats {
                             barWindow: bar
                         }
 
-                        // Brightness
                         BrightnessWidget {
                             barWindow: bar
                         }
 
-                        // Volume
                         VolumeWidget {
                             barWindow: bar
                         }
 
-                        // Network
                         NetworkWidget {
                             barWindow: bar
                         }
 
-                        // Bluetooth
                         BluetoothWidget {
                             barWindow: bar
                         }
 
-                        // Battery
                         BatteryWidget {
                             barWindow: bar
                         }
 
-                        // SwayNC Notifications
                         NotificationsWidget {}
 
-                        // System Tray
-                        SystemTrayWidget {}
-
-                        // Power Menu
                         PowerMenuWidget {
                             barWindow: bar
                         }

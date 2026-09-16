@@ -17,23 +17,15 @@ Item {
         id: powerCapsule
         anchors.fill: parent
         radius: Theme.radiusPill
-        color: powerMouse.containsMouse ? Theme.bgLight : Theme.bgAlt
-        border {
-            width: 1
-            color: powerPopup.visible ? Theme.red : (powerMouse.containsMouse ? Theme.borderHover : Theme.border)
-        }
+        color: powerMouse.containsMouse ? Theme.bgLight : "transparent"
 
-        implicitWidth: 32
+        implicitWidth: 28
         implicitHeight: Theme.capsuleHeight
-
-        Behavior on color {
-            ColorAnimation { duration: 120 }
-        }
 
         Text {
             anchors.centerIn: parent
             text: "󰐥"
-            color: powerMouse.containsMouse ? Theme.red : Theme.fg
+            color: powerMouse.containsMouse ? Theme.red : Theme.fgMuted
             font {
                 family: Theme.fontMono
                 pixelSize: Theme.iconSizeMd

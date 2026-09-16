@@ -89,7 +89,7 @@ require("bufferline").setup()
 require("gitsigns").setup()
 require("ipynb").setup()
 
-vim.lsp.enable({ "lua_ls", "ty"})
+vim.lsp.enable({ "lua_ls", "ty", "rust_analyzer"})
 require("nvim-treesitter").setup({
     ensure_installed = {
         "lua",
@@ -98,6 +98,7 @@ require("nvim-treesitter").setup({
         "json",
         "javascript",
         "c",
+        "rust",
     },
     highlight = {
         enable = true

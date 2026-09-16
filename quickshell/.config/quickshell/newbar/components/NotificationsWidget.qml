@@ -11,17 +11,9 @@ Rectangle {
     property bool dnd: false
 
     implicitHeight: Theme.capsuleHeight
-    implicitWidth: notifRow.implicitWidth + 14
+    implicitWidth: notifRow.implicitWidth + 10
     radius: Theme.radiusPill
-    color: notifMouse.containsMouse ? Theme.bgLight : Theme.bgAlt
-    border {
-        width: 1
-        color: root.count > 0 ? Theme.borderFocus : (notifMouse.containsMouse ? Theme.borderHover : Theme.border)
-    }
-
-    Behavior on color {
-        ColorAnimation { duration: 120 }
-    }
+    color: notifMouse.containsMouse ? Theme.bgLight : "transparent"
 
     Process {
         id: notifProc
@@ -61,24 +53,14 @@ Rectangle {
             }
         }
 
-        // Count badge
-        Rectangle {
+        Text {
             visible: root.count > 0
-            implicitWidth: Math.max(16, countText.implicitWidth + 6)
-            implicitHeight: 16
-            radius: 8
+            text: root.count.toString()
             color: Theme.yellow
-
-            Text {
-                id: countText
-                anchors.centerIn: parent
-                text: root.count.toString()
-                color: Theme.bg
-                font {
-                    family: Theme.fontMono
-                    pixelSize: Theme.fontSizeXs
-                    weight: Font.Bold
-                }
+            font {
+                family: Theme.fontMono
+                pixelSize: Theme.fontSizeSm
+                weight: Font.Bold
             }
         }
     }

@@ -8,13 +8,9 @@ Rectangle {
     id: root
 
     implicitHeight: Theme.capsuleHeight
-    implicitWidth: wsRow.implicitWidth + 12
+    implicitWidth: wsRow.implicitWidth + 10
     radius: Theme.radiusPill
     color: Theme.bgAlt
-    border {
-        width: 1
-        color: Theme.border
-    }
 
     // Helper to find a workspace object by ID
     function getWorkspace(id) {
@@ -45,7 +41,7 @@ Rectangle {
     RowLayout {
         id: wsRow
         anchors.centerIn: parent
-        spacing: 4
+        spacing: 3
 
         Repeater {
             model: root.workspaceIds
@@ -59,65 +55,28 @@ Rectangle {
                 readonly property bool isUrgent: wsObj ? wsObj.urgent : false
                 readonly property bool hasWindows: wsObj ? (wsObj.toplevels && wsObj.toplevels.values && wsObj.toplevels.values.length > 0) : false
 
-                implicitHeight: 22
-                // Active workspace pill expands for a sleek look
-                implicitWidth: isActive ? 34 : (hasWindows ? 24 : 22)
-                radius: 6
+                implicitHeight: 6
+                implicitWidth: {
+                    if (isActive) return 18;
+                    if (isUrgent) return 10;
+                    if (hasWindows) return 10;
+                    return 6;
+                }
+                radius: 3
 
                 color: {
                     if (isUrgent) return Theme.red;
                     if (isActive) return Theme.yellow;
-                    if (wsMouse.containsMouse) return Theme.bgLight;
-                    if (hasWindows) return Theme.bgSubtle;
-                    return "transparent";
-                }
-
-                border {
-                    width: 1
-                    color: {
-                        if (isUrgent) return Theme.red;
-                        if (isActive) return Theme.yellowDim;
-                        if (wsMouse.containsMouse) return Theme.borderHover;
-                        if (hasWindows) return Theme.borderSubtle;
-                        return "transparent";
-                    }
+                    if (hasWindows) return Theme.fgDark;
+                    return Theme.fgSubdued;
                 }
 
                 Behavior on implicitWidth {
-                    NumberAnimation { duration: 150; easing.type: Easing.OutCubic }
+                    NumberAnimation { duration: 120; easing.type: Easing.OutCubic }
                 }
 
                 Behavior on color {
-                    ColorAnimation { duration: 120 }
-                }
-
-                RowLayout {
-                    anchors.centerIn: parent
-                    spacing: 3
-
-                    Text {
-                        text: wsButton.modelData
-                        font {
-                            family: Theme.fontMono
-                            pixelSize: Theme.fontSizeRegular
-                            weight: wsButton.isActive ? Font.Bold : (wsButton.hasWindows ? Font.Medium : Font.Normal)
-                        }
-                        color: {
-                            if (wsButton.isUrgent) return Theme.fgBright;
-                            if (wsButton.isActive) return Theme.bg; // Contrast on yellow pill
-                            if (wsButton.hasWindows) return Theme.fgBright;
-                            return Theme.fgMuted;
-                        }
-                    }
-
-                    // Active dot indicator inside the expanded pill
-                    Rectangle {
-                        visible: wsButton.isActive
-                        width: 4
-                        height: 4
-                        radius: 2
-                        color: Theme.bg
-                    }
+                    ColorAnimation { duration: 100 }
                 }
 
                 MouseArea {

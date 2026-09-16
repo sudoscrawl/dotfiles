@@ -24,32 +24,15 @@ Item {
         id: clockCapsule
         anchors.fill: parent
         radius: Theme.radiusPill
-        color: clockMouse.containsMouse ? Theme.bgLight : Theme.bgAlt
-        border {
-            width: 1
-            color: calendarPopup.visible ? Theme.borderFocus : (clockMouse.containsMouse ? Theme.borderHover : Theme.border)
-        }
+        color: clockMouse.containsMouse ? Theme.bgLight : "transparent"
 
-        implicitWidth: clockLayout.implicitWidth + 18
+        implicitWidth: clockLayout.implicitWidth + 14
         implicitHeight: Theme.capsuleHeight
-
-        Behavior on color {
-            ColorAnimation { duration: 120 }
-        }
 
         RowLayout {
             id: clockLayout
             anchors.centerIn: parent
-            spacing: 8
-
-            Text {
-                text: "󰥔"
-                color: Theme.yellow
-                font {
-                    family: Theme.fontMono
-                    pixelSize: Theme.iconSizeSm
-                }
-            }
+            spacing: 6
 
             Text {
                 text: root.use24Hour
@@ -59,14 +42,8 @@ Item {
                 font {
                     family: Theme.fontMono
                     pixelSize: Theme.fontSizeRegular
-                    weight: Font.Bold
+                    weight: Font.Medium
                 }
-            }
-
-            Rectangle {
-                width: 1
-                height: 12
-                color: Theme.borderSubtle
             }
 
             Text {

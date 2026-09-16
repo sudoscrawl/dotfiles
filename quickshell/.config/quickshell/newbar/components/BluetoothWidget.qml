@@ -113,34 +113,21 @@ Item {
         id: btCapsule
         anchors.fill: parent
         radius: Theme.radiusPill
-        color: btMouse.containsMouse ? Theme.bgLight : Theme.bgAlt
-        border {
-            width: 1
-            color: btPopup.visible ? Theme.borderFocus : (btMouse.containsMouse ? Theme.borderHover : Theme.border)
-        }
-        implicitWidth: btRow.implicitWidth + 14
+        color: btMouse.containsMouse ? Theme.bgLight : "transparent"
+        
+        implicitWidth: 28
         implicitHeight: Theme.capsuleHeight
-
-        Behavior on color { ColorAnimation { duration: 120 } }
-        Behavior on border.color { ColorAnimation { duration: 120 } }
 
         RowLayout {
             id: btRow
             anchors.centerIn: parent
-            spacing: 5
+            spacing: 0
 
             Text {
                 text: root.btIcon
                 color: root.connectedCount > 0 ? Theme.blue : (root.isEnabled ? Theme.fg : Theme.fgMuted)
                 font { family: Theme.fontMono; pixelSize: Theme.iconSizeSm }
                 Behavior on color { ColorAnimation { duration: 150 } }
-            }
-
-            Text {
-                visible: root.connectedCount > 0
-                text: root.connectedCount.toString()
-                color: Theme.blue
-                font { family: Theme.fontMono; pixelSize: Theme.fontSizeSm; weight: Font.Medium }
             }
         }
 
