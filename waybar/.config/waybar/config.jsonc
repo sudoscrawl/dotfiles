@@ -1,0 +1,163 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 32,
+  "margin-top": 8,
+  "margin-left": 12,
+  "margin-right": 12,
+  "spacing": 0,
+
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock#time",
+    "clock#date"
+  ],
+  "modules-right": [
+    "custom/media",
+    "custom/media-prev",
+    "custom/media-toggle",
+    "custom/media-next",
+    "network",
+    "bluetooth",
+    "custom/swaync",
+    "backlight",
+    "pulseaudio",
+    "battery"
+  ],
+
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "all-outputs": true,
+    "persistent-workspaces": {
+      "*": 5
+    },
+    "format-icons": {
+      "active": "{name}",
+      "default": "{name}"
+    }
+  },
+
+  "clock#time": {
+    "format": "{:%H:%M}"
+  },
+
+  "clock#date": {
+    "format": "  •  {:%a, %d %b}",
+    "tooltip-format": "{:%A, %d %B %Y}"
+  },
+
+  "network": {
+    "format-wifi": "",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰖪",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": "{ifname}",
+    "tooltip-format-disconnected": "Disconnected",
+    "on-click": "networkmanager_dmenu"
+  },
+
+  "bluetooth": {
+    "format": "󰂯",
+    "format-disabled": "󰂲",
+    "format-off": "󰂲",
+    "format-connected": "󰂱",
+    "tooltip-format": "{status}",
+    "on-click": "rofi-bluetooth"
+  },
+
+  "custom/swaync": {
+    "format": "󰂚",
+    "tooltip": false,
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw"
+  },
+
+  "custom/media": {
+    "exec": "/home/ayush/dotfiles/waybar/.config/waybar/scripts/media-status",
+    "interval": 2,
+    "escape": true,
+    "max-length": 38,
+    "tooltip": false,
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "on-click-middle": "playerctl previous"
+  },
+
+  "custom/media-prev": {
+    "exec": "playerctl status >/dev/null 2>&1 && printf '󰒮'",
+    "interval": 2,
+    "tooltip": false,
+    "on-click": "playerctl previous"
+  },
+
+  "custom/media-toggle": {
+    "exec": "sh -c 'case \"$(playerctl status 2>/dev/null)\" in Playing) printf \"󰏤\" ;; Paused) printf \"󰐊\" ;; esac'",
+    "interval": 2,
+    "tooltip": false,
+    "on-click": "playerctl play-pause"
+  },
+
+  "custom/media-next": {
+    "exec": "playerctl status >/dev/null 2>&1 && printf '󰒭'",
+    "interval": 2,
+    "tooltip": false,
+    "on-click": "playerctl next"
+  },
+
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "󰃞",
+      "󰃟",
+      "󰃠"
+    ],
+    "on-click": "sh -c 'notify-send Brightness \"$(brightnessctl get)/$(brightnessctl max)\"'",
+    "on-scroll-up": "brightnessctl set +5%",
+    "on-scroll-down": "brightnessctl set 5%-",
+    "tooltip": false
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰖁 muted",
+    "format-icons": {
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ]
+    },
+    "on-click": "pavucontrol",
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+    "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "tooltip": false
+  },
+
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-discharging": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰂄 {capacity}%",
+    "format-icons": [
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ],
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "on-click": "sh -c 'notify-send Battery \"$(cat /sys/class/power_supply/BAT*/capacity 2>/dev/null | head -n1)%\"'",
+    "tooltip": false
+  }
+}

@@ -2,8 +2,8 @@ local config = {
     apps = {
         terminal = "kitty",
         browser = "firefox-developer-edition",
-        file_manager = "dolphin",
-        launcher = "wofi",
+        file_manager = "kitty -e yazi",
+        launcher = "rofi -show drun",
         lock_screen = "hyprlock"
     },
     wallpaper = "~/Pictures/wallpapers/gruvbox_forest-4.png",

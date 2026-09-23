@@ -1,0 +1,115 @@
+* {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  font-family: "Iosevka Nerd Font", "Iosevka", monospace;
+  font-size: 13px;
+  font-weight: 500;
+  min-height: 0;
+}
+
+window#waybar {
+  background: rgba(8, 8, 8, 0.70);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 9px;
+  color: rgba(222, 222, 222, 0.84);
+}
+
+tooltip {
+  background: rgba(8, 8, 8, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+}
+
+tooltip label {
+  color: rgba(235, 235, 235, 0.88);
+}
+
+#workspaces {
+  padding: 0 10px;
+}
+
+#workspaces button {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  color: rgba(166, 166, 166, 0.70);
+  margin: 0;
+  min-width: 20px;
+  padding: 0 3px;
+}
+
+#workspaces button.active {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  color: rgba(245, 245, 245, 0.96);
+  margin: 0;
+  padding: 0 3px;
+}
+
+#workspaces button:hover {
+  background: transparent;
+  color: rgba(225, 225, 225, 0.88);
+}
+
+#clock.time {
+  color: rgba(245, 245, 245, 0.90);
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#clock.date {
+  color: rgba(178, 178, 178, 0.78);
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#network,
+#bluetooth,
+#custom-swaync,
+#custom-media,
+#custom-media-prev,
+#custom-media-toggle,
+#custom-media-next,
+#backlight,
+#pulseaudio,
+#battery {
+  background: transparent;
+  color: rgba(222, 222, 222, 0.84);
+  margin: 0;
+  padding: 0 7px;
+}
+
+#network {
+  padding-left: 12px;
+}
+
+#custom-media {
+  color: rgba(190, 190, 190, 0.80);
+  padding-left: 10px;
+  padding-right: 6px;
+}
+
+#custom-media-prev,
+#custom-media-toggle,
+#custom-media-next {
+  color: rgba(222, 222, 222, 0.84);
+  min-width: 14px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#battery {
+  padding-right: 12px;
+}
+
+#network.disconnected,
+#bluetooth.disabled,
+#bluetooth.off,
+#pulseaudio.muted,
+#battery.warning,
+#battery.critical {
+  color: rgba(150, 150, 150, 0.68);
+}

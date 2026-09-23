@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+status="$(playerctl status 2>/dev/null || true)"
+[[ -z "$status" ]] && exit 0
+
+player="$(playerctl metadata --format '{{playerName}}' 2>/dev/null || true)"
+artist="$(playerctl metadata --format '{{artist}}' 2>/dev/null || true)"
+title="$(playerctl metadata --format '{{title}}' 2>/dev/null || true)"
+
+[[ -z "$artist" && -z "$title" ]] && exit 0
+
+icon="󰝚"
+case "${player,,}" in
+  *spotify*) icon="" ;;
+  *firefox*|*chrome*|*chromium*|*brave*) icon="" ;;
+  *vlc*) icon="󰕼" ;;
+esac
+
+if [[ -n "$artist" && -n "$title" ]]; then
+  text="${artist} - ${title}"
+else
+  text="${title:-$artist}"
+fi
+
+printf '%s %s\n' "$icon" "$text"

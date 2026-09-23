@@ -154,5 +154,5 @@ cmp.setup({
 require("lualine").setup()
 
 vim.opt.termguicolors = true
-vim.cmd("colorscheme guts")
+vim.cmd("colorscheme luna")
 vim.lsp.buf.hover()
