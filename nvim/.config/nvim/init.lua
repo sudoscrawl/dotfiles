@@ -1,7 +1,7 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.fillchars = { eob = " " }
-vim.opt.cursorline = true
+-- vim.opt.cursorline = true
 
 vim.opt.fileencoding = "utf-8"
 vim.opt.clipboard = "unnamedplus"
