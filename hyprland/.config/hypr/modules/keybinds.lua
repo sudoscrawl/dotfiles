@@ -18,7 +18,7 @@ hl.bind(config.modifier .. " + T", hl.dsp.exec_cmd(config.apps.terminal))
 hl.bind(config.modifier .. " + B", hl.dsp.exec_cmd(config.apps.browser))
 hl.bind(config.modifier .. " + E", hl.dsp.exec_cmd(config.apps.file_manager))
 hl.bind(config.modifier .. " + R", hl.dsp.exec_cmd(config.apps.launcher))
-
+hl.bind(config.modifier .. " + M", hl.dsp.exec_cmd(config.apps.power_btn))
 
 -- WORKSPACES
 for i = 1, 10 do

@@ -1,0 +1,94 @@
+* {
+    background-image: none;
+    box-shadow: none;
+    font-size: 0px;
+}
+
+window {
+    background-color: rgba(12, 12, 12, 0.2);
+}
+
+button {
+    margin: 0;
+
+    min-width: 100px;
+    min-height: 100px;
+    padding: 0;
+    border-radius: 0;
+    border: 0;
+
+    color: #FFFFFF;
+    background-color: rgba(12, 12, 12, 0.4);
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30%;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+
+    transition: all 0.2s ease;
+}
+
+/* Mouse hover: only the button under the cursor lights up */
+button:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.6);
+}
+
+/* Mouse press feedback */
+button:active {
+    background-color: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+button:focus {
+    outline: none;
+    background-color: rgba(12, 12, 12, 0.4);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+button:focus:not(:hover) {
+    animation: focus-ring-fade 3s ease-out forwards;
+}
+
+@keyframes focus-ring-fade {
+    0% {
+        box-shadow:
+            0 0 0 3px rgba(255, 255, 255, 0.85),
+            0 6px 18px rgba(0, 0, 0, 0.4);
+    }
+    60% {
+        box-shadow:
+            0 0 0 3px rgba(255, 255, 255, 0.85),
+            0 6px 18px rgba(0, 0, 0, 0.4);
+    }
+    100% {
+        box-shadow:
+            0 0 0 0 rgba(255, 255, 255, 0),
+            0 6px 18px rgba(0, 0, 0, 0.4);
+    }
+}
+
+#lock {
+    background-image: url("/home/ayush/.config/wlogout/icons/lock.png");
+}
+
+#shutdown {
+    background-image: url("/home/ayush/.config/wlogout/icons/power.png");
+}
+
+#reboot {
+    background-image: url("/home/ayush/.config/wlogout/icons/restart.png");
+}
+
+#logout {
+    background-image: url("/home/ayush/.config/wlogout/icons/logout.png");
+}
+
+#suspend {
+    background-image: url("/home/ayush/.config/wlogout/icons/sleep.png");
+}
+
+#hibernate {
+    background-image: url("/home/ayush/.config/wlogout/icons/hibernate.png");
+}
