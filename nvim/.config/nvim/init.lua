@@ -62,9 +62,8 @@ end
 
 vim.pack.add({
     { src = gh("neovim/nvim-lspconfig") },
-    { src = gh("vossenwout/guts.nvim")},
-    { src = gh("wtfox/luna.nvim")},
     { src = gh("mason-org/mason.nvim") },
+    { src = gh("catppuccin/nvim"), name = "catppuccin"},
     { src = gh("nvim-treesitter/nvim-treesitter") },
     { src = gh("nvim-tree/nvim-web-devicons") },
     { src = gh("nvim-lualine/lualine.nvim") },
@@ -74,7 +73,6 @@ vim.pack.add({
     { src = gh("saghen/blink.cmp") },
     { src = gh("sudoscrawl/midnight.nvim") },
     { src = gh("MeanderingProgrammer/render-markdown.nvim")},
-    { src = gh("akinsho/bufferline.nvim")},
     { src = gh("lewis6991/gitsigns.nvim")},
     { src = gh("ajbucci/ipynb.nvim")},
 })
@@ -85,7 +83,6 @@ require("oil").setup()
 require("mason").setup()
 -- require("noice").setup()
 require("render-markdown").setup({})
-require("bufferline").setup()
 require("gitsigns").setup()
 require("ipynb").setup()
 
@@ -153,6 +150,23 @@ cmp.setup({
 
 require("lualine").setup()
 
+
+require("catppuccin").setup {
+    transparent_background = true,
+
+    integrations = {
+        bufferline = true,
+    },
+    color_overrides = {
+				mocha = {
+					base = "#000000",
+					mantle = "#000000",
+					crust = "#000000",
+				},
+			},
+}
+
+vim.cmd("colorscheme catppuccin-mocha")
+
 vim.opt.termguicolors = true
-vim.cmd("colorscheme luna")
 vim.lsp.buf.hover()

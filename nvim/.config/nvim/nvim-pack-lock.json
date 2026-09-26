@@ -88,6 +88,10 @@
       "rev": "4663eb3ecd538bd5062628fb6d95bbe6bdca78f6",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
+    "solarized-osaka.nvim": {
+      "rev": "a21176efde15fab21fabda0bf2ba123ed6d7332d",
+      "src": "https://github.com/craftzdog/solarized-osaka.nvim"
+    },
     "tokyo-night-dark.nvim": {
       "rev": "6071709eab64e278770bf447f7eb626036412080",
       "src": "https://github.com/sudoscrawl/tokyo-night-dark.nvim"
