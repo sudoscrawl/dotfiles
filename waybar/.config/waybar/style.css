@@ -9,20 +9,20 @@
 }
 
 window#waybar {
-  background: rgba(8, 8, 8, 0.70);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 9px;
-  color: rgba(222, 222, 222, 0.84);
+  background: #0a0a0a;
+  border: none;
+  border-radius: 0;
+  color: #d4d4d4;
 }
 
 tooltip {
-  background: rgba(8, 8, 8, 0.92);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 8px;
+  background: #0a0a0a;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
 }
 
 tooltip label {
-  color: rgba(235, 235, 235, 0.88);
+  color: #d4d4d4;
 }
 
 #workspaces {
@@ -34,7 +34,7 @@ tooltip label {
   border: 0;
   border-radius: 0;
   box-shadow: none;
-  color: rgba(166, 166, 166, 0.70);
+  color: #636363;
   margin: 0;
   min-width: 20px;
   padding: 0 3px;
@@ -44,24 +44,24 @@ tooltip label {
   background: transparent;
   border: 0;
   box-shadow: none;
-  color: rgba(245, 245, 245, 0.96);
+  color: #e0e0e0;
   margin: 0;
   padding: 0 3px;
 }
 
 #workspaces button:hover {
   background: transparent;
-  color: rgba(225, 225, 225, 0.88);
+  color: #b0b0b0;
 }
 
 #clock.time {
-  color: rgba(245, 245, 245, 0.90);
+  color: #e0e0e0;
   padding-left: 0;
   padding-right: 0;
 }
 
 #clock.date {
-  color: rgba(178, 178, 178, 0.78);
+  color: #888888;
   padding-left: 0;
   padding-right: 0;
 }
@@ -77,7 +77,7 @@ tooltip label {
 #pulseaudio,
 #battery {
   background: transparent;
-  color: rgba(222, 222, 222, 0.84);
+  color: #d4d4d4;
   margin: 0;
   padding: 0 7px;
 }
@@ -87,7 +87,7 @@ tooltip label {
 }
 
 #custom-media {
-  color: rgba(190, 190, 190, 0.80);
+  color: #999999;
   padding-left: 10px;
   padding-right: 6px;
 }
@@ -95,7 +95,7 @@ tooltip label {
 #custom-media-prev,
 #custom-media-toggle,
 #custom-media-next {
-  color: rgba(222, 222, 222, 0.84);
+  color: #d4d4d4;
   min-width: 14px;
   padding-left: 5px;
   padding-right: 5px;
@@ -111,5 +111,5 @@ tooltip label {
 #pulseaudio.muted,
 #battery.warning,
 #battery.critical {
-  color: rgba(150, 150, 150, 0.68);
+  color: #555555;
 }
