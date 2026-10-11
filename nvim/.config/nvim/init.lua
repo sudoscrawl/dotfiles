@@ -86,7 +86,7 @@ require("render-markdown").setup({})
 require("gitsigns").setup()
 require("ipynb").setup()
 
-vim.lsp.enable({ "lua_ls", "ty", "rust_analyzer", "clangd"})
+vim.lsp.enable({ "lua_ls", "ty", "rust_analyzer", "clangd", "gopls"})
 require("nvim-treesitter").setup({
     ensure_installed = {
         "lua",
@@ -96,6 +96,7 @@ require("nvim-treesitter").setup({
         "javascript",
         "c",
         "rust",
+        "go"
     },
     highlight = {
         enable = true

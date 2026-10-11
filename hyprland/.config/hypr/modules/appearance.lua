@@ -1,7 +1,7 @@
 hl.config({
     general = {
         gaps_in = 7,
-        gaps_out = 12,
+        gaps_out = 0,
 
         border_size = 0,
 
@@ -10,7 +10,7 @@ hl.config({
             inactive_border = "rgba(595959aa)",
         },
 
-        resize_on_border = false,
+        resize_on_border = true,
         allow_tearing = false,
 
         layout = "dwindle",
