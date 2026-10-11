@@ -67,7 +67,7 @@ vim.pack.add({
     { src = gh("nvim-treesitter/nvim-treesitter") },
     { src = gh("nvim-tree/nvim-web-devicons") },
     { src = gh("nvim-lualine/lualine.nvim") },
-    { src = gh("nvim-mini/mini.pick") },
+    { src = gh("nvim-telescope/telescope.nvim") },
     { src = gh("stevearc/oil.nvim") },
     { src = gh("saghen/blink.lib") },
     { src = gh("saghen/blink.cmp") },

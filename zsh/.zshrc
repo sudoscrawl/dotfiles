@@ -17,3 +17,6 @@ export PATH="/home/ayush/.local/bin:$PATH"
 
 export EDITOR=nvim
 export VISUAL=nvim
+
+export GOPATH=$HOME/go
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
