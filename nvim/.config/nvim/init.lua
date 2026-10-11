@@ -66,8 +66,7 @@ vim.pack.add({
     { src = gh("catppuccin/nvim"), name = "catppuccin"},
     { src = gh("nvim-treesitter/nvim-treesitter") },
     { src = gh("nvim-tree/nvim-web-devicons") },
-    { src = gh("nvim-lualine/lualine.nvim") },
-    { src = gh("nvim-telescope/telescope.nvim") },
+    { src = gh("nvim-mini/mini.pick") },
     { src = gh("stevearc/oil.nvim") },
     { src = gh("saghen/blink.lib") },
     { src = gh("saghen/blink.cmp") },
@@ -148,9 +147,6 @@ cmp.setup({
     implementation = "prefer_rust_with_warning",
   },
 })
-
-require("lualine").setup()
-
 
 require("catppuccin").setup {
     transparent_background = true,
