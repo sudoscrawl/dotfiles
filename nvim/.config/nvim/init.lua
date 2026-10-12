@@ -61,6 +61,7 @@ local cb = function (x)
 end
 
 vim.pack.add({
+    { src = gh("andweeb/presence.nvim")},
     { src = gh("neovim/nvim-lspconfig") },
     { src = gh("mason-org/mason.nvim") },
     { src = gh("catppuccin/nvim"), name = "catppuccin"},
@@ -70,10 +71,7 @@ vim.pack.add({
     { src = gh("stevearc/oil.nvim") },
     { src = gh("saghen/blink.lib") },
     { src = gh("saghen/blink.cmp") },
-    { src = gh("sudoscrawl/midnight.nvim") },
-    { src = gh("MeanderingProgrammer/render-markdown.nvim")},
     { src = gh("lewis6991/gitsigns.nvim")},
-    { src = gh("ajbucci/ipynb.nvim")},
 })
 
 
@@ -81,9 +79,8 @@ require("mini.pick").setup()
 require("oil").setup()
 require("mason").setup()
 -- require("noice").setup()
-require("render-markdown").setup({})
 require("gitsigns").setup()
-require("ipynb").setup()
+require("presence").setup()
 
 vim.lsp.enable({ "lua_ls", "ty", "rust_analyzer", "clangd", "gopls"})
 require("nvim-treesitter").setup({
@@ -143,9 +140,6 @@ cmp.setup({
     default = { "lsp", "path", "snippets", "buffer" },
   },
 
-  fuzzy = {
-    implementation = "prefer_rust_with_warning",
-  },
 })
 
 require("catppuccin").setup {
