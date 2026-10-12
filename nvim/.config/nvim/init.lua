@@ -11,12 +11,20 @@ vim.opt.confirm = true
 vim.opt.swapfile = false
 -- vim.opt.cmdheight = 0
 vim.opt.showcmd = false
+vim.opt.autoread = true
+vim.opt.autowrite = false
+
+vim.opt.scrolloff = 10
+vim.opt.sidescrolloff = 8
+
 
 vim.opt.updatetime = 100
 vim.opt.ttimeoutlen = 1
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
 
 vim.opt.wrap = false
 vim.opt.tabstop = 4

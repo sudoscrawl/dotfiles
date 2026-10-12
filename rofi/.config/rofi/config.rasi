@@ -25,10 +25,10 @@ configuration {
 }
 
 * {
-    bg: #00000090;
-    bg-alt: #00000000;
+    bg: #000000;
+    bg-alt: #000000;
     bg-hover: #242832FF;
-    bg-selected: #0d0d0d30;
+    bg-selected: #0d0d0d;
     fg: #E6EAF2FF;
     fg-muted: #8B93A7FF;
     fg-dark: #6f6f6f;
@@ -37,7 +37,6 @@ configuration {
     urgent: #F7768EFF;
     border-color: #FFFFFF00;
 
-    background-color: transparent;
     text-color: @fg;
     margin: 0;
     padding: 0;
