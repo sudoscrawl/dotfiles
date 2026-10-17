@@ -46,9 +46,9 @@ hl.bind(config.modifier .. " + F8",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%
 
 
 -- SCREENSHOTS
-hl.bind(config.modifier .. " + PRINT", hl.dsp.exec_cmd("hyprshot -m region -o ~/Pictures/Screenshots"))
-hl.bind(config.modifier .. " + SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot -m window -o ~/Pictures/Screenshots"))
-hl.bind(config.modifier .. " + CTRL + PRINT", hl.dsp.exec_cmd("hyprshot -m output -o ~/Pictures/Screenshots")) 
+hl.bind(config.modifier .. " + F12", hl.dsp.exec_cmd("hyprshot -m region -o ~/Pictures/Screenshots"))
+hl.bind(config.modifier .. " + SHIFT + F12", hl.dsp.exec_cmd("hyprshot -m window -o ~/Pictures/Screenshots"))
+hl.bind(config.modifier .. " + CTRL + F12", hl.dsp.exec_cmd("hyprshot -m output -o ~/Pictures/Screenshots")) 
 
 
 
