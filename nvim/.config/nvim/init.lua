@@ -47,6 +47,7 @@ vim.keymap.set('n', 'zz', ":wq<CR>")
 vim.keymap.set('n', 'bn', ":bnext<CR>")
 vim.keymap.set('n', 'bp', ":bprevious<CR>")
 vim.keymap.set('n', 'bd', ":bdelete<CR>")
+vim.keymap.set('n', '<leader>m', ":Mason<CR>")
 
 
 vim.diagnostic.config({
@@ -90,7 +91,7 @@ require("mason").setup()
 require("gitsigns").setup()
 require("presence").setup()
 
-vim.lsp.enable({ "lua_ls", "ty", "rust_analyzer", "clangd", "gopls"})
+vim.lsp.enable({ "lua_ls", "ty", "rust_analyzer", "clangd", "gopls", "emmet_ls"})
 require("nvim-treesitter").setup({
     ensure_installed = {
         "lua",

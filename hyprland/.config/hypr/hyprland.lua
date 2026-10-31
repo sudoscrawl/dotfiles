@@ -4,6 +4,8 @@ require("modules.appearance")
 require("modules.startup")
 
 hl.env("XCURSOR_SIZE", "24")
+hl.env("XCURSOR_THEME", "capitaine-cursors-light")
+hl.env("HYPRCURSOR_THEME", "capitaine-cursors-light")
 hl.env("HYPRCURSOR_SIZE", "24")
 
 
