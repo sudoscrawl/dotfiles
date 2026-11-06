@@ -19,3 +19,7 @@ export VISUAL=nvim
 
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# opencode
+export PATH=/home/ayush/.opencode/bin:$PATH

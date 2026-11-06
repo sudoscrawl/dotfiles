@@ -43,7 +43,7 @@ vim.keymap.set('n', '<leader>r', ":restart<CR>")
 vim.keymap.set('n', '<leader><leader>', ":Pick files<CR>")
 vim.keymap.set('n', '<leader>d', ":Oil<CR>")
 vim.keymap.set('n', 'zz', ":wq<CR>")
-
+vim.keymap.set('n', '<leader>k', 'K<CR>')
 vim.keymap.set('n', 'bn', ":bnext<CR>")
 vim.keymap.set('n', 'bp', ":bprevious<CR>")
 vim.keymap.set('n', 'bd', ":bdelete<CR>")
@@ -91,7 +91,7 @@ require("mason").setup()
 require("gitsigns").setup()
 require("presence").setup()
 
-vim.lsp.enable({ "lua_ls", "ty", "rust_analyzer", "clangd", "gopls", "emmet_ls"})
+vim.lsp.enable({ "lua_ls", "ty",  "clangd",  "emmet_ls", "kotlin_lsp"})
 require("nvim-treesitter").setup({
     ensure_installed = {
         "lua",

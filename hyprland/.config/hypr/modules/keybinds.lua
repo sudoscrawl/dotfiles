@@ -37,17 +37,17 @@ for i = 1, 10 do
 end
 
 -- SPECIAL KEYS
-hl.bind(config.modifier .. " + F6", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
-hl.bind(config.modifier .. " + F5", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),      { locked = true, repeating = true })
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 2%+"), { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-"),      { locked = true, repeating = true })
+hl.bind(config.modifier .. " + F6", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%+"), { locked = true, repeating = true })
+hl.bind(config.modifier .. " + F5", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-"),      { locked = true, repeating = true })
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%+"), { locked = true, repeating = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-"),      { locked = true, repeating = true })
 hl.bind("XF86AudioMute",        hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),     { locked = true, repeating = true })
 hl.bind("XF86AudioMicMute",     hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),   { locked = true, repeating = true })
 hl.bind(config.modifier .. " + F9",  hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 2%+"),                  { locked = true, repeating = true })
 hl.bind(config.modifier .. " + F8",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 2%-"),                  { locked = true, repeating = true })
-hl.bind(config.modifier .. " + XF86AudioRaiseVolume", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 2%+"), { locked = true, repeating = true})
-hl.bind(config.modifier .. " + XF86AudioLowerVolume", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 2%-"), {locked = true, repeating = true})
-
+hl.bind(config.modifier .. " + XF86AudioRaiseVolume", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 1%+"), { locked = true, repeating = true})
+hl.bind(config.modifier .. " + XF86AudioLowerVolume", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 1%-"), {locked = true, repeating = true})
+hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), {locked=true})
 
 -- SCREENSHOTS
 hl.bind(config.modifier .. " + F12", hl.dsp.exec_cmd("hyprshot -m region -o ~/Pictures/Screenshots"))
@@ -68,19 +68,19 @@ end
 
 hl.bind(config.modifier .. " + CTRL + left", function ()
     resize_window(-20, 0)
-end)
+end, {repeating = true})
 
 hl.bind(config.modifier .. " + CTRL + down", function ()
     resize_window(0, 20)
-end)
+end, {repeating=true})
 
 hl.bind(config.modifier .. " + CTRL + up", function ()
     resize_window(0, -20)
-end)
+end, {repeating=true})
 
 hl.bind(config.modifier .. " + CTRL + right", function ()
     resize_window(20, 0)
-end)
+end, {repeating=true})
 
 
 -- LOCK
