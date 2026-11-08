@@ -5,7 +5,7 @@ local config = {
         file_manager = "kitty -e yazi",
         launcher = "rofi -show drun",
         lock_screen = "hyprlock",
-        power_btn = "wlogout"
+        power_btn = "wlogout",
     },
     modifier = "SUPER"
 }
