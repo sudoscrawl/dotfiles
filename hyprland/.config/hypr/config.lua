@@ -2,6 +2,7 @@ local config = {
     apps = {
         terminal = "kitty",
         browser = "zen-browser",
+        browser_private = "zen-browser --private-window",
         file_manager = "kitty -e yazi",
         launcher = "rofi -show drun",
         lock_screen = "hyprlock",
