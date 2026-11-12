@@ -1,4 +1,5 @@
 alias vim='nvim'
+alias kiro='kiro-cli'
 alias venv='source .venv/bin/activate'
 alias loc='git ls-files | xargs wc -l'
 alias ff='clear && fastfetch'
