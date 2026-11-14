@@ -21,7 +21,7 @@ hl.bind(config.modifier .. " + E", hl.dsp.exec_cmd(config.apps.file_manager))
 hl.bind(config.modifier .. " + R", hl.dsp.exec_cmd(config.apps.launcher))
 hl.bind(config.modifier .. " + M", hl.dsp.exec_cmd(config.apps.power_btn))
 hl.bind(config.modifier .. " + L", hl.dsp.exec_cmd(config.apps.lock_screen))
-
+hl.bind(config.modifier .. " + F11", hl.dsp.exec_cmd("pgrep -x waybar && pkill waybar || waybar"))
 
 -- WORKSPACES
 for i = 1, 10 do
