@@ -81,6 +81,7 @@ vim.pack.add({
     { src = gh("saghen/blink.lib") },
     { src = gh("saghen/blink.cmp") },
     { src = gh("lewis6991/gitsigns.nvim")},
+    { src = gh("ajbucci/ipynb.nvim")},
 })
 
 
