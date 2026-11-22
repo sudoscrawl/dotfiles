@@ -91,6 +91,7 @@ require("mason").setup()
 -- require("noice").setup()
 require("gitsigns").setup()
 require("presence").setup()
+require("ipynb").setup()
 
 vim.lsp.enable({ "lua_ls", "ty",  "clangd",  "emmet_ls", "kotlin_lsp"})
 require("nvim-treesitter").setup({
